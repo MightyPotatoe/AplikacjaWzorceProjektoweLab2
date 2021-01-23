@@ -1,6 +1,13 @@
 package com.example.aplikacjawzorcepriojektowelab2;
 
+import com.example.aplikacjawzorcepriojektowelab2.domain.GetRecipes;
+import com.example.aplikacjawzorcepriojektowelab2.entity.Recipe;
+
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +18,16 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void DomainGetRecipes() {
+        GetRecipes getRecipes = new GetRecipes();
+        ArrayList<Recipe> meatMealsList = getRecipes.getRecipes(true);
+        Assert.assertFalse(meatMealsList.get(0).isRecipeVegan());
+        Assert.assertFalse(meatMealsList.get(1).isRecipeVegan());
+        Assert.assertFalse(meatMealsList.get(2).isRecipeVegan());
+
+        List<Recipe> veganMealsList = getRecipes.getRecipes(false);
+        Assert.assertTrue(veganMealsList.get(0).isRecipeVegan());
+        Assert.assertTrue(veganMealsList.get(1).isRecipeVegan());
+        Assert.assertTrue(veganMealsList.get(2).isRecipeVegan());
     }
 }

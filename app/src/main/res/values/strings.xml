@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">AplikacjaWzorcePriojektoweLab2</string>
+    <string name="app_name">AplikacjaWzorceProjektoweLab2</string>
+    <string name="tylko_przepisy_miesne">Tylko przepisy mięsne</string>
 </resources>
